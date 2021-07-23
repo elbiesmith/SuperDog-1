@@ -28,7 +28,7 @@
         <div class="container-fluid">
             <a class="navbar-brand align-content-center" href="#"><img
                     src="img/initialsBlack/android-chrome-512x512.png" alt="Belinda Tiberio Logo"
-                    class="d-inline-block align-text-top" width="50" height="50"> SuperDog</a>
+                    class="d-inline-block align-text-top img-fluid" width="50" height="50"> SuperDog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,16 +56,49 @@
     </nav>
 
     <!-- ==== MAIN =====- where all content goes -->
-    <main id="content" class="flex-shrink-0 mt-6">
-        <div class="container-fluid">
+    <main id="content" class="flex-shrink-0">
+        <div class="container-fluid mt-6">
             <div class="dogContainer">
                 <div class="row">
-                    <div class="col-6 border">
-                        <h4>Hello from Column 1</h4>
+                    <div class="col-sm-6">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary">Pick a Location</button>
+                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <!-- Template for Dropdown Button -->
+                            <div id="eventDropDown" class="dropdown-menu">
+                                          <table class="table table-striped">
+                                              <tr>
+                                                  <th colspan="2" id="statsHeader">Stats For All Events</th>
+                                              </tr>
+                                              <tr>
+                                                  <td>Total Attendance</td>
+                                                  <td id="total">100</td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Average Attendance</td>
+                                                  <td id="average">100</td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Most Attended</td>
+                                                  <td id="most">100</td>
+                                              </tr>
+                                              <tr>
+                                                  <td>Least Attended</td>
+                                                  <td id="least">100</td>
+                                              </tr>
+                                          </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-6 border">
-                        <h4>Hello from Column 2</h4>
+                        <img src="/img/SuperDog.jpg" class="img-fluid p-2"></img>
                     </div>
+                </div>
+                <div class="row col-12">
+                    <h4>Row 2</h4>
                 </div>
 
             </div>
@@ -116,7 +149,7 @@
         document.getElementById("btn-CheckArray").addEventListener("click", function () {
             addBuilding();
             loopCheckArray();
-        }) -->
+        }) 
         //document.getElementById("btn-CheckArray").addEventListener("click", addBuilding)
 
         //     document.getElementById("addValue").addEventListener("keypress", function (keyPressed) {
@@ -124,7 +157,7 @@
         //                     addValue;
         //                 }
         //             })
-    </script>
+    </script>-->
 
 
 
