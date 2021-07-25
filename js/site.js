@@ -169,12 +169,12 @@
 
      //Using templates to complete
      for (var i = 0; i < curEvents.length; i++) {
-         const eventRow = document.importNode(template.contentEditable, true);
+         const eventRow = document.importNode(template.content, true);
          eventRow.getElementById("event").textContent = curEvents[i].event;
          eventRow.getElementById("city").textContent = curEvents[i].city;
          eventRow.getElementById("state").textContent = curEvents[i].state;
          eventRow.getElementById("attendance").textContent = curEvents[i].attendance;
-         eventRow.getElementById("eventDate").textContent = new Data(curEvents[i].date).tolocaleDateString();
+         eventRow.getElementById("eventDate").textContent = new Data(curEvents[i].date).toLocaleString();
      }
      eventBody.appendChild(eventRow);
  }
