@@ -168,7 +168,7 @@
      }
 
      //Using templates to complete
-     for (var = 0; i < curEvents.length, i++) {
+     for (var i = 0; i < curEvents.length; i++) {
          const eventRow = document.importNode(template.contentEditable, true);
          eventRow.getElementById("event").textContent = curEvents[i].event;
          eventRow.getElementById("city").textContent = curEvents[i].city;
