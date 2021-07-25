@@ -145,3 +145,34 @@
 
      }
  }
+
+ function displayData() {
+     const template = document.getElementById("eventData-template");
+     const eventBody = document.getElementById("eventBody");
+
+     // Clears table before writing to it. 
+     eventBody.innerHTML = "";
+
+     // Allows us to store complex datasets in local storage -> up to 5 mgs
+     // works like Cookies, but cookies only allows for "name, value, pairs"
+
+     // If you cannot find anything, return Empty Array
+     let curEvents = JSON.parse(localStorage.getItem("eventsArray")) || [];
+
+     // Putting current items in (if emtpy or NULL)
+     if (curEvents.length == 0) {
+         curEvents = events;
+         localStorage.setItem("eventsArray", JSON.stringify(curEvents));
+     }
+
+     //Using templates to complete
+     for (var = 0; i < curEvents.length, i++) {
+         const eventRow = document.importNode(template.contentEditable, true);
+         eventRow.getElementById("event").textContent = curEvents[i].event;
+         eventRow.getElementById("city").textContent = curEvents[i].city;
+         eventRow.getElementById("state").textContent = curEvents[i].state;
+         eventRow.getElementById("attendance").textContent = curEvents[i].attendance;
+         eventRow.getElementById("eventDate").textContent = new Data(curEvents[i].event).tolocaleDateString();
+     }
+     eventBody.appendChild(eventRow);
+ }
