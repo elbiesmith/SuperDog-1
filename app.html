@@ -102,11 +102,37 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <h4>Row 2</h4>
+                <div class="col-sm-12">
+                    <button type="button " class="btn btn-secondary">
+                        ADD DATA
+                    </button>
+                    <table class="table table-striped" id="eventData">
+                        <thead class="">
+                            <tr>
+                                <th>Event Name</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Attendance</th>
+                                <th>Event Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventBody"></tbody>
+                        <!-- Event Data Goes HERE -->
+                    </table>
                 </div>
             </div>
         </div>
+
+        <!-- Template inside Javascript -->
+        <template id="eventData-template">
+            <tr>
+                <td id="event"></td>
+                <td id="city"></td>
+                <td id="state"></td>
+                <td id="attendance"></td>
+                <td id="eventDate"></td>
+            </tr>
+        </template>
 
     </main>
     <!-- ==== Footer ==== -->
