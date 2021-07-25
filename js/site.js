@@ -89,6 +89,8 @@
      }
      resultHTML += linkHTMLend;
      eventDD.innerHTML = resultHTML;
+     displayStats();
+     displayData();
  }
 
  // Function to display stats for Total, Average, Most, Least Attended for a particular city once it's selected
