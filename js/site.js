@@ -90,3 +90,58 @@
      resultHTML += linkHTMLend;
      eventDD.innerHTML = resultHTML;
  }
+
+ // Function to display stats for Total, Average, Most, Least Attended for a particular city once it's selected
+
+ //Function chooses event to display the stats
+ function getEvents(element) {
+     let city = element.getAttribute("data-string");
+     //reset to get events in filtered events
+     filteredEvents = events;
+     document.getElementById("statsHeader").innerHTML = `Stats for ${city} Events`;
+     // display stats, if it's one of the cities not ALL.
+     if (city != "All") {
+         filteredEvents = events.filter(function (item) {
+             // item == array of events, to filter the city
+             if (item.city == city) {
+                 return item;
+             }
+         })
+     }
+     displayStats();
+ }
+
+ // 
+ function displayStats() {
+     let total = 0;
+     let average = 0;
+     let most = 0;
+     let least = -1;
+     let currentAttendance = 0;
+
+     // loops to help compare stats
+     for (var i = 0; i < filteredEvents.length; i++) {
+         currentAttendance = filteredEvents[i].attendance;
+         total += currentAttendance;
+
+         // determining which one is the most attendance
+         if (most < currentAttendance) {
+             most = currentAttendance;
+         }
+
+         // determine the least current attendance
+         if (least > currentAttendance || least < 0) {
+             least = currentAttendance;
+         }
+         average = total / filteredEvents.length;
+         // toLocalString() -> provide comma deliniation
+         document.getElementById("total").innerHTML = total.toLocaleString();
+         document.getElementById("most").innerHTML = most.toLocaleString();
+         document.getElementById("least").innerHTML = least.toLocaleString();
+         document.getElementById("average").innerHTML = average.toLocaleString(undefined, {
+             minimumFractionDigits: 0,
+             maximumFractionDigits: 0
+         });
+
+     }
+ }
