@@ -174,7 +174,7 @@
          eventRow.getElementById("city").textContent = curEvents[i].city;
          eventRow.getElementById("state").textContent = curEvents[i].state;
          eventRow.getElementById("attendance").textContent = curEvents[i].attendance;
-         eventRow.getElementById("eventDate").textContent = new Data(curEvents[i].event).tolocaleDateString();
+         eventRow.getElementById("eventDate").textContent = new Data(curEvents[i].date).tolocaleDateString();
      }
      eventBody.appendChild(eventRow);
  }
